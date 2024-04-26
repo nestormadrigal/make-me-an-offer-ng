@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>MakeMeAnOfferNg</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <script>
+      let slots = new Array(15);
+      console.log('slots: ', slots);
+      document.addEventListener('click', (event) => {
+        if (event.target.className.includes('div-')) {
+          console.log('div ', event.target.children[0].innerText);
+        }
+        if (event.target.localName == 'p') {
+          console.log('I am ', event.target.innerText);
+        }
+      });
+
+      function reverseSentence(sentence) {
+        sentence = sentence.split(' ');
+        if (sentence.length > 1) {
+          console.log('ary sentence ', sentence);
+          reverseSentence = sentence.reverse();
+          console.log('ary reverse sentence ', reverseSentence.join(' '));
+        }
+      }
+
+      function largestNth(ary, n) {
+        ary.sort((a, b) => a - b);
+        nth = ary[ary.length - n];
+        console.log('nth element is: ', nth);
+      }
+
+      // reverseSentence('Javascript is Awesome');
+      largestNth([10, 5, 3, 8, 2], 3);
+    </script>
+    <style>
+      main {
+        width: 400px;
+      }
+      div {
+        padding: 2em;
+        margin: 0 auto;
+        border: 1px solid #777;
+      }
+      div p {
+        text-align: center;
+      }
+
+      .div-1 {
+        background-color: blueviolet;
+      }
+      .div-2 {
+        background-color: cadetblue;
+      }
+      .div-3 {
+        background-color: darkgreen;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <div class="div-1">
+        <p>Div 1</p>
+        <div class="div-2">
+          <p>Div 2</p>
+          <div class="div-3"><p>Div 3</p></div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

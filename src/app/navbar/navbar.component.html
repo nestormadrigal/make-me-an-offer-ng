@@ -1,0 +1,57 @@
+<nav class="nav navbar">
+  <a
+    (click)="setTab('Home')"
+    [ngClass]="{ active: activeTab == 'Home' }"
+    class="nav-item"
+    >Home</a
+  >
+  <a
+    (click)="setTab('News')"
+    [ngClass]="{ active: activeTab == 'Home' }"
+    class="nav-item"
+    >News</a
+  >
+  <a
+    (click)="setTab('Contact')"
+    [ngClass]="{ active: activeTab == 'Home' }"
+    class="nav-item"
+    >Contact</a
+  >
+  <a
+    (click)="setTab('About')"
+    [ngClass]="{ active: activeTab == 'Home' }"
+    class="nav-item"
+    >About</a
+  >
+</nav>
+
+<section class="tab-content">
+  <div
+    #homeContent
+    [ngClass]="{ active: activeTab == 'Home' }"
+    class="nav-content"
+  >
+    <div><h1>Home tab</h1></div>
+  </div>
+  <div
+    [ngClass]="{ active: activeTab == 'News' }"
+    #newsContent
+    class="nav-content"
+  >
+    <h1>News tab</h1>
+  </div>
+  <div
+    [ngClass]="{ active: activeTab == 'Contact' }"
+    #contactContent
+    class="nav-content"
+  >
+    <h1>Contact content</h1>
+  </div>
+  <div
+    [ngClass]="{ active: activeTab == 'About' }"
+    #aboutContent
+    class="nav-content"
+  >
+    <h1>About Content</h1>
+  </div>
+</section>
